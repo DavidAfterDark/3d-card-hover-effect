@@ -20,8 +20,27 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+
       - name: Install, build, and upload your site
         uses: withastro/action@v0
+
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Build Astro
+        run: npm run build --if-present
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
+        
         # with:
             # path: . # La ubicación de la raíz de tu proyecto de Astro dentro del repositorio. (opcional)
             # node-version: 16 # La versión específica de Node que debe utilizarse para compilar tu proyecto. Por defecto es la 16. (opcional)
