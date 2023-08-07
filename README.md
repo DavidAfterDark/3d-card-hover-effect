@@ -1,6 +1,6 @@
 ### A modern CSS only card hover animation using 3D transforms!
 
-***built with HTML, CSS and Astro***
+***built with HTML, CSS and Astro!***
 
 --------------------------------------------------------------------------
 
