@@ -4,4 +4,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     site: 'https://hanktech.github.io',
     base: '/hanktech',
+    build: {
+        assets: 'astro'
+    }
 });
